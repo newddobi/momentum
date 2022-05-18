@@ -1,0 +1,64 @@
+$base-color: #c64345;
+$black: #555555;
+$white: #ffffff;
+$gray: #777777;
+$border-radius: 3px !default;
+
+html,
+body {
+    font-size: 62.5%;
+    line-height: 1.285;
+    margin: 0 auto;
+}
+
+body {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://source.unsplash.com/random/?star);
+
+
+    & article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        & h2#clock {
+            margin: 0 auto;
+            padding: 30px 0;
+            color: $white;
+            font-size: 30rem;
+            text-align: center;
+            text-shadow: 2px 4px 1px $gray;
+        }
+
+        & form#login-form {
+            display: flex;
+            width: 600px;
+            height: 40px;
+            justify-content: space-between;
+            gap: 10px;
+
+
+            & input[type="text"] {
+                width: 100%;
+            }
+
+            & input[type="submit"] {
+                width: 80px;
+            }
+        }
+    }
+
+
+
+}
+
+
+
+
+.hidden {
+    display: none;
+}
