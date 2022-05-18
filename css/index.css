@@ -46,6 +46,6 @@ body article form#login-form input[type="submit"] {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 /*# sourceMappingURL=index.css.map */
