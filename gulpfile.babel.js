@@ -1,27 +1,36 @@
 import gulp from "gulp";
+import del from "del";
+import ws from "gulp-webserver";
+import htmlmin from "gulp-htmlmin";
+import autoprefixer from "gulp-autoprefixer";
+import miniCSS from "gulp-csso";
+import bro from "gulp-bro";
+import babelify from "babelify";
 
-export const dev = () => console.log("I will dev");
+const sass = require("gulp-sass")(require("node-sass"));
 
 const routes = {
   scss: {
-    watch: "src/scss/**/*.scss",
-    src: "src/scss/style.scss",
-    dest: "build/css",
+    watch: "scss/**/*.scss",
+    src: "scss/style.scss",
+    dest: "docs/",
   },
   js: {
-    watch: "src/js/**/*.js",
-    src: "src/js/main.js",
-    dest: "build/js",
+    watch: "js/**/*.js",
+    src: "js/main.js",
+    dest: "docs/",
+  },
+  html: {
+    watch: "index.html",
+    src: "index.html",
+    dest: "docs/",
   },
 };
 
-const clean = () => del(["build/", ".publish"]);
+const clean = () => del(["docs/"]);
 
 const webserver = () =>
-  gulp.src("build").pipe(ws({ livereload: true, open: true }));
-
-const img = () =>
-  gulp.src(routes.img.src).pipe(image()).pipe(gulp.dest(routes.img.dest));
+  gulp.src("docs").pipe(ws({ livereload: true, open: true }));
 
 const styles = () =>
   gulp
@@ -43,3 +52,25 @@ const js = () =>
       })
     )
     .pipe(gulp.dest(routes.js.dest));
+
+const html = () =>
+  gulp
+    .src(routes.html.src)
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest(routes.html.dest));
+
+const watch = () => {
+  gulp.watch(routes.scss.watch, styles);
+  gulp.watch(routes.js.watch, js);
+  gulp.watch(routes.html.watch, html);
+};
+
+const prepare = gulp.series([clean]);
+
+const assets = gulp.series([html, styles, js]);
+
+const live = gulp.parallel([webserver, watch]);
+
+export const build = gulp.series([prepare, assets]);
+export const dev = gulp.series([build, live]);
+export const deploy = gulp.series([build]);
