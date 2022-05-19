@@ -12,13 +12,13 @@ const sass = require("gulp-sass")(require("node-sass"));
 const routes = {
   scss: {
     watch: "scss/**/*.scss",
-    src: "scss/style.scss",
-    dest: "docs/",
+    src: "scss/index.scss",
+    dest: "docs/css",
   },
   js: {
     watch: "js/**/*.js",
-    src: "js/main.js",
-    dest: "docs/",
+    src: "js/*.js",
+    dest: "docs/js",
   },
   html: {
     watch: "index.html",
