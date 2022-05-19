@@ -1,1 +1,105 @@
-body,html{font-size:62.5%;line-height:1.285;margin:0 auto}body{height:100vh;background-size:auto;background-repeat:repeat;background-image:url(https://source.unsplash.com/random/?cat)}body article{display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%}body article h2#clock{margin:0 auto;padding:30px 0;color:#fff;font-size:30rem;text-align:center;text-shadow:2px 4px 1px #777}body article form#login-form{display:flex;width:600px;height:40px;justify-content:space-between;gap:10px}body article form#login-form input[type=text]{width:100%}body article form#login-form input[type=submit]{width:80px}.hidden{display:none}
+.hidden {
+    display: none
+}
+
+body,
+html {
+    font-size: 62.5%;
+    line-height: 1.285;
+    margin: 0 auto
+}
+
+input {
+    border: 0;
+    border-radius: 10px
+}
+
+body {
+    height: 100vh;
+    background-size: auto;
+    background-repeat: repeat;
+    background-image: url(https://source.unsplash.com/random/?cat)
+}
+
+body article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%
+}
+
+#clock {
+    margin: 0 auto;
+    padding: 30px 0;
+    color: #fff;
+    font-size: 16rem;
+    text-align: center
+}
+
+#login-form {
+    display: flex;
+    width: 600px;
+    height: auto;
+    justify-content: space-between;
+    gap: 10px
+}
+
+#login-form input:first-child {
+    width: 100%;
+    font-size: 2rem;
+    padding: 10px
+}
+
+#login-form input:nth-child(2) {
+    width: auto;
+    font-size: 2rem;
+    padding: 10px 40px;
+    cursor: pointer;
+    background-color: #032f88;
+    color: #fff
+}
+
+#greeting {
+    font-size: 4rem;
+    text-align: center;
+    color: #fff;
+    line-height: 8rem
+}
+
+#todo-form {
+    width: 600px
+}
+
+#todo-form input {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 2rem;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 1px solid gray
+}
+
+#todo-list {
+    margin-top: 40px
+}
+
+#todo-list li {
+    display: flex;
+    font-size: 2rem;
+    padding-bottom: 10px;
+    list-style: none
+}
+
+#todo-list li span {
+    margin-right: 10px;
+    color: #fff
+}
+
+#quote {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff
+}
