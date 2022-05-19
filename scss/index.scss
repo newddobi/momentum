@@ -1,8 +1,14 @@
-$base-color: #c64345;
+$blue: #032f88;
 $black: #555555;
 $white: #ffffff;
 $gray: #777777;
 $border-radius: 3px !default;
+
+
+.hidden {
+    display: none;
+}
+
 
 html,
 body {
@@ -10,6 +16,9 @@ body {
     line-height: 1.285;
     margin: 0 auto;
 }
+
+input { border: none;
+border-radius: 10px;}
 
 body {
     height: 100vh;
@@ -24,41 +33,90 @@ body {
         justify-content: center;
         align-items: center;
         height: 100%;
-
-        & h2#clock {
-            margin: 0 auto;
-            padding: 30px 0;
-            color: $white;
-            font-size: 30rem;
-            text-align: center;
-            text-shadow: 2px 4px 1px $gray;
-        }
-
-        & form#login-form {
-            display: flex;
-            width: 600px;
-            height: 40px;
-            justify-content: space-between;
-            gap: 10px;
-
-
-            & input[type="text"] {
-                width: 100%;
-            }
-
-            & input[type="submit"] {
-                width: 80px;
-            }
-        }
     }
-
 
 
 }
 
 
+#clock {
+    margin: 0 auto;
+    padding: 30px 0;
+    color: $white;
+    font-size: 16rem;
+    text-align: center;
+}
+
+#login-form {
+    display: flex;
+    width: 600px;
+    height: auto;
+    justify-content: space-between;
+    gap: 10px;
 
 
-.hidden {
-    display: none;
+    & input:first-child {
+        width: 100%;
+        font-size: 2rem;
+        padding: 10px;
+    }
+
+    & input:nth-child(2) {
+        width: auto;
+        font-size: 2rem;
+        padding: 10px 40px;
+        cursor: pointer;
+        background-color: $blue;
+        color: $white;
+    }
+
+}
+
+#greeting {
+    font-size: 4rem;
+    text-align: center;
+    color: $white;
+    line-height: 8rem;
+
+
+}
+
+#todo-form {
+    width: 600px; 
+
+    & input {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 2rem;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 1px solid gray;
+    }
+}
+
+#todo-list {
+    margin-top: 40px;
+
+    & li {
+        display: flex;
+        font-size: 2rem;
+        padding-bottom: 10px;
+        list-style: none;
+
+        & span {
+            margin-right: 10px;
+            color: $white;
+
+        }
+    }
+
+    
+}
+
+#quote {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
 }
