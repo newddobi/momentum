@@ -9,7 +9,6 @@ $border-radius: 3px !default;
     display: none !important;
 }
 
-
 html,
 body {
     font-size: 62.5%;
@@ -38,6 +37,12 @@ body {
 
 }
 
+#logout {
+    background-color: #777777;
+    float: right;
+    cursor: pointer;
+    font-size: 12px
+}
 
 #clock {
     margin: 0 auto;

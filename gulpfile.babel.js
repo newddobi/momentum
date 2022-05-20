@@ -18,7 +18,7 @@ const routes = {
     dest: "docs/css",
   },
   js: {
-    watch: "js/**/*.js",
+    watch: "js/*.js",
     src: "js/*.js",
     dest: "docs/js",
   },

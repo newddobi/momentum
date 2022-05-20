@@ -17,17 +17,36 @@ function deleteToDo(event) {
   saveToDos();
 }
 
+function updateToDo(event) {
+  const span = event.target.previousElementSibling;
+  const fixedTodo = prompt("할일 내용 수정");
+  span.innerText = fixedTodo;
+
+  const li = event.target.parentElement;
+  const updateTargetTodoArrayIndex = toDos.findIndex(
+    (toDo) => toDo.id === parseInt(li.id)
+  );
+  toDos[updateTargetTodoArrayIndex].text = fixedTodo;
+  saveToDos();
+}
+
 function paintTodo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.id;
   const span = document.createElement("span");
   span.innerText = newTodo.text;
 
-  const button = document.createElement("button");
-  button.innerText = "❌";
-  button.addEventListener("click", deleteToDo);
+  const updateButton = document.createElement("button");
+  updateButton.innerText = "🔨";
+  updateButton.addEventListener("click", updateToDo);
+
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "❌";
+  deleteButton.addEventListener("click", deleteToDo);
+
   li.appendChild(span);
-  li.appendChild(button);
+  li.appendChild(updateButton);
+  li.appendChild(deleteButton);
 
   toDoList.appendChild(li);
 }
