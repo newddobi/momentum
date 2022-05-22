@@ -1,48 +1,9 @@
-$blue: #032f88;
-$black: #555555;
-$white: #ffffff;
-$gray: #777777;
-$border-radius: 3px !default;
+@import "_base.scss";
+@import "_layout.scss";
+@import "_variables.scss";
 
 
-.hidden {
-    display: none !important;
-}
 
-html,
-body {
-    font-size: 62.5%;
-    line-height: 1.285;
-    margin: 0 auto;
-}
-
-input { border: none;
-border-radius: 10px;}
-
-body {
-    height: 100vh;
-    background-size: auto;
-    background-repeat: repeat;
-    background-image: url(https://source.unsplash.com/random/?cat);
-
-
-    & article {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
-
-
-}
-
-#logout {
-    background-color: #777777;
-    float: right;
-    cursor: pointer;
-    font-size: 12px
-}
 
 #clock {
     margin: 0 auto;
@@ -77,11 +38,12 @@ body {
 
 }
 
+// name
 #greeting {
-    font-size: 4rem;
+    font-size: 32px;
     text-align: center;
-    color: $white;
-    line-height: 8rem;
+    color: $name;
+    line-height: 40px;
 
 
 }
@@ -94,8 +56,6 @@ body {
     padding: 10px 0;
     font-size: 2rem;
     width: 100%;
-    background-color: transparent;
-    border-bottom: 1px solid gray;
     }
 }
 
@@ -118,10 +78,40 @@ body {
     
 }
 
+// footer, 명언
 #quote {
     display: flex;
-    flex-direction: column;
-    font-size: 1rem;
+    font-size: 20px;
+    font-weight: 600;
     text-align: center;
     color: white;
+    position: absolute;
+    bottom: 20px;
+    gap: 10px;
 }
+
+
+#weather, #logout {
+    position: absolute;
+    top: 20px;
+    color: $white;
+}
+
+
+#weather {
+    right:40px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+// 로그아웃 버튼
+#logout {
+    left: 40px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 2;
+}
+
