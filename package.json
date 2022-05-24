@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "babelify": "^10.0.0",
+    "tippy.js": "^6.3.7",
     "uglifyify": "^5.0.2"
   }
 }
