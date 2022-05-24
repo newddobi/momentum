@@ -1,5 +1,6 @@
 @import "_base.scss";
 @import "_layout.scss";
+@import "_mixin.scss";
 @import "_variables.scss";
 
 
@@ -9,53 +10,62 @@
     margin: 0 auto;
     padding: 30px 0;
     color: $white;
-    font-size: 16rem;
+    font-size: 8.0rem;
     text-align: center;
 }
 
 #login-form {
     display: flex;
-    width: 600px;
+    width: 90%;
     height: auto;
     justify-content: space-between;
     gap: 10px;
+    margin-bottom: 40px;
 
 
     & input:first-child {
         width: 100%;
-        font-size: 2rem;
+        font-size: 1.6rem;
         padding: 10px;
+        border-bottom: 1px solid $white;
+        background: none;
+        color: $white;
+
+        &::placeholder {
+            color: $white;
+        }
     }
 
     & input:nth-child(2) {
         width: auto;
-        font-size: 2rem;
+        font-size: 1.2rem;
         padding: 10px 40px;
         cursor: pointer;
-        background-color: $blue;
+        background-color: $black;
         color: $white;
+        border-radius: 4px;
     }
 
 }
 
 // name
 #greeting {
-    font-size: 32px;
+    font-size: 2.4rem;
     text-align: center;
-    color: $name;
-    line-height: 40px;
+    color: $white;
+    margin-bottom: 40px;
 
 
 }
 
 #todo-form {
-    width: 600px; 
+    width: 90%;
 
     & input {
-    text-align: center;
-    padding: 10px 0;
-    font-size: 2rem;
-    width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 1.4rem;
+        width: 100%;
     }
 }
 
@@ -64,25 +74,44 @@
 
     & li {
         display: flex;
-        font-size: 2rem;
         padding-bottom: 10px;
         list-style: none;
 
         & span {
+            font-size: 1.2rem;
             margin-right: 10px;
             color: $white;
-
+            line-height: 32px;
         }
     }
 
-    
+    // todo list button
+    & button {
+        cursor: pointer;
+        color: $white;
+        padding: 8px 10px;
+        border: none;
+        border-radius: 4px;
+
+        &:first-of-type {
+            background-color: $black;
+            margin-right: 8px;
+        }
+
+        &:last-of-type {
+            background-color: $blue;
+        }
+    }
+
+
 }
 
 // footer, 명언
 #quote {
     display: flex;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: italic;
     text-align: center;
     color: white;
     position: absolute;
@@ -91,16 +120,17 @@
 }
 
 
-#weather, #logout {
+#weather,
+#logout {
     position: absolute;
-    top: 20px;
+    top: 10%;
     color: $white;
 }
 
 
 #weather {
-    right:40px;
-    font-size: 16px;
+    right: 10%;
+    font-size: 1.2rem;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -108,10 +138,51 @@
 
 // 로그아웃 버튼
 #logout {
-    left: 40px;
-    width: 40px;
-    height: 40px;
+    left: 10%;
+    width: 32px;
+    height: 32px;
     cursor: pointer;
     z-index: 2;
 }
 
+
+// mobile 
+@include mobile {
+    body article {
+        width: 90%;
+    }
+    
+    #clock {
+        font-size: 3.2rem;
+    }
+
+    #todo-form input {
+        font-size: 1.2rem;
+    }
+
+    #quote {
+        flex-direction: column;
+        font-size: 1rem;
+    }
+
+    #login-form {
+        margin-bottom: 20px;
+
+        & input {
+            &:first-child {
+                font-size: 1.2rem;
+            }
+
+            &:nth-child(2) {
+                color: $white;
+                padding: 4px 16px;
+            }
+        }
+    }
+
+    #greeting {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+}

@@ -19,15 +19,20 @@ function deleteToDo(event) {
 
 function updateToDo(event) {
   const span = event.target.previousElementSibling;
-  const fixedTodo = prompt("할일 내용 수정");
-  span.innerText = fixedTodo;
+  const fixedTodo = prompt("수정할 내용을 입력하세요");
 
-  const li = event.target.parentElement;
-  const updateTargetTodoArrayIndex = toDos.findIndex(
-    (toDo) => toDo.id === parseInt(li.id)
-  );
-  toDos[updateTargetTodoArrayIndex].text = fixedTodo;
-  saveToDos();
+  if (fixedTodo) {
+    alert("수정되었습니다.");
+    span.innerText = fixedTodo;
+    const li = event.target.parentElement;
+    const updateTargetTodoArrayIndex = toDos.findIndex(
+      (toDo) => toDo.id === parseInt(li.id)
+    );
+    toDos[updateTargetTodoArrayIndex].text = fixedTodo;
+    saveToDos();
+  } else {
+    alert("수정이 취소되었습니다.");
+  }
 }
 
 function paintTodo(newTodo) {
@@ -36,12 +41,18 @@ function paintTodo(newTodo) {
   const span = document.createElement("span");
   span.innerText = newTodo.text;
 
+  if (newTodo.text === "빵먹기") {
+    span.innerText = "🍞🍞🍞";
+  } else {
+    span.innerText = newTodo.text;
+  }
+
   const updateButton = document.createElement("button");
-  updateButton.innerText = "🔨";
+  updateButton.innerText = "수정";
   updateButton.addEventListener("click", updateToDo);
 
   const deleteButton = document.createElement("button");
-  deleteButton.innerText = "❌";
+  deleteButton.innerText = "삭제";
   deleteButton.addEventListener("click", deleteToDo);
 
   li.appendChild(span);

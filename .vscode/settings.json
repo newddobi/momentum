@@ -9,5 +9,6 @@
             "extensionName": ".css",
             "savePath": "/css/"
         }
-    ]
+    ],
+    "editor.formatOnSave": true
 }
