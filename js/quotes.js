@@ -72,7 +72,4 @@ author.innerText = todaysQuote.author;
 
 tippy("#quote", {
   content: todaysQuote.korean,
-  // theme: "translucent",
-  theme: "light",
-  animation: "perspective",
 });
