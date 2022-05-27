@@ -66,6 +66,13 @@
         padding: 10px 0;
         font-size: 1.4rem;
         width: 100%;
+
+        background: none;
+        border-bottom: 1px solid $white;
+        color: $white;
+        &::placeholder {
+            color: $white;
+        }
     }
 }
 
