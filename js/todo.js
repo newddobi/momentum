@@ -17,6 +17,11 @@ function deleteToDo(event) {
   saveToDos();
 }
 
+function completeToDo(event) {
+  const clickedSpan = event.target;
+  clickedSpan.classList.toggle("complete");
+}
+
 function updateToDo(event) {
   const span = event.target.previousElementSibling;
   const fixedTodo = prompt("수정할 내용을 입력하세요");
@@ -38,6 +43,8 @@ function updateToDo(event) {
 function paintTodo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.id;
+  li.addEventListener("click", completeToDo);
+
   const span = document.createElement("span");
   span.innerText = newTodo.text;
 

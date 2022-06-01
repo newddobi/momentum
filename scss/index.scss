@@ -83,6 +83,7 @@
         display: flex;
         padding-bottom: 10px;
         list-style: none;
+        
 
         & span {
             font-size: 1.2rem;
@@ -90,6 +91,10 @@
             color: $white;
             line-height: 32px;
         }
+    }
+    & .complete {
+        text-decoration: line-through;
+        text-decoration-color: white;
     }
 
     // todo list button
