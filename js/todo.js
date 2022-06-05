@@ -43,10 +43,10 @@ function updateToDo(event) {
 function paintTodo(newTodo) {
   const li = document.createElement("li");
   li.id = newTodo.id;
-  li.addEventListener("click", completeToDo);
 
   const span = document.createElement("span");
   span.innerText = newTodo.text;
+  span.addEventListener("click", completeToDo);
 
   if (newTodo.text === "빵먹기") {
     span.innerText = "🍞🍞🍞";
